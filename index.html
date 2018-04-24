@@ -1,0 +1,50 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: black;
+      }
+
+      .banner-image {
+        height: 100%;
+      }
+
+      .banner-image-container {
+        position: absolute;
+        right: 50%;
+        top: 5%;
+        height: 90%;
+        width: 10000px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .banner-image-timer {
+        position: absolute;
+        background-color: white;
+        right: 30vh;
+        top: 33.8vh;
+        height: 2.2vh;
+        width: 3vh;
+        overflow: hidden;
+        font-size: 2.0vh;
+        letter-spacing: 1.1;
+        font-family: 'Helvetica Neue', Arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10%;
+        background-color: rgb(42, 160, 28);
+        color: white;
+      }
+    </style>
+    <script src='./index.js'></script>
+  </head>
+  <body>
+    <div class='banner-image-container'>
+      <img class='banner-image' src='./top-down.png' />
+      <div id='timer' class='banner-image-timer'></div>
+    </div>
+  </body>
+</html>
