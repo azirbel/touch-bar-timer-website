@@ -1,0 +1,124 @@
+body {
+  background-color: black;
+  color: #9fa3a6;
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.celebrate {
+  background-color: white;
+  color: black;
+}
+
+.banner-image {
+  height: 100%;
+}
+
+.banner-image-container {
+  position: absolute;
+  right: 50%;
+  top: -10%;
+  height: 130%;
+  width: 10000px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.banner-image-timer {
+  position: absolute;
+  background-color: white;
+  right: 52.5vh;
+  top: 43.95vh;
+  height: 2.8vh;
+  width: 5.15vh;
+  overflow: hidden;
+  font-size: 1.2vh;
+  letter-spacing: 1.1;
+  font-family: 'Helvetica Neue', Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  background-color: rgb(42, 160, 28);
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.text-container {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 80vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 6vw;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.celebrate h1 {
+  color: red;
+  font-weight: bold;
+  font-size: 8vw;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+strong {
+  color: white;
+}
+
+.celebrate strong {
+  color: red;
+}
+
+.logo-image {
+  height: 50px;
+  width: 50px;
+}
+
+button {
+  background-color: rgb(42, 160, 28);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 4px;
+  padding: 18px 30px;
+  font-size: 24px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebrate button {
+  background-color: red;
+}
+
+.footer-container {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  color: #888;
+}
+
+a {
+  color: #9fa3a6;
+  text-decoration: underline;
+}
