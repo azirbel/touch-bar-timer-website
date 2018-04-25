@@ -22,7 +22,7 @@ let celebrating = false;
 let seconds = 1;
 let lastMousedown = null;
 
-window.mdown = (event) => {
+window.mdown = _.debounce((event) => {
   if (celebrating) {
     return;
   }
@@ -36,9 +36,9 @@ window.mdown = (event) => {
       celebrate();
     }
   }, LONG_HOLD_MS);
-}
+}, 100);
 
-window.mup = () => {
+window.mup = _.debounce(() => {
   if (celebrating || !lastMousedown) {
     return;
   }
@@ -53,7 +53,7 @@ window.mup = () => {
   }
 
   lastMousedown = null;
-}
+}, 100);
 
 window.cmenu = () => {
   if (celebrating) {

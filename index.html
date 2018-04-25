@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@0.0.3/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
     <script src="./index.js"></script>
   </head>
   <body>
@@ -22,6 +23,8 @@
         onmousedown='mdown()'
         onmouseup='mup()'
         oncontextmenu='cmenu()'
+        ontouchstart='mdown()'
+        ontouchend='mup()'
         class='banner-image-timer'
       >
         0:00
@@ -35,6 +38,8 @@
           onmousedown='mdown()'
           onmouseup='mup()'
           oncontextmenu='cmenu()'
+          ontouchstart='mdown()'
+          ontouchend='mup()'
           class='mobile-banner-image-timer'
         >
           0:00
