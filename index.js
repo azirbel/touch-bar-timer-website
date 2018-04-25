@@ -1,5 +1,11 @@
 'use strict';
 
+window.oncontextmenu = function(event) {
+     event.preventDefault();
+     event.stopPropagation();
+     return false;
+};
+
 function pad(num, size) {
     let s = num + '';
     while (s.length < size) {
@@ -12,10 +18,15 @@ const SHORT_HOLD_MS = 300;
 const LONG_HOLD_MS = 2000;
 
 let active = true;
+let celebrating = false;
 let seconds = 1;
 let lastMousedown = null;
 
 window.mdown = (event) => {
+  if (celebrating) {
+    return;
+  }
+
   lastMousedown = new Date();
   let myLast = lastMousedown;
 
@@ -28,7 +39,7 @@ window.mdown = (event) => {
 }
 
 window.mup = () => {
-  if (!lastMousedown) {
+  if (celebrating || !lastMousedown) {
     return;
   }
 
@@ -45,6 +56,11 @@ window.mup = () => {
 }
 
 window.cmenu = () => {
+  if (celebrating) {
+    return;
+  }
+
+  celebrate();
   return false;
 }
 
@@ -80,6 +96,8 @@ setInterval(() => {
 }, 1000);
 
 function celebrate() {
+  celebrating = true;
+
   doFireworks();
   doSideConfetti();
 
@@ -88,8 +106,8 @@ function celebrate() {
   document.getElementById('mobile-timer').style.backgroundColor = 'red';
   document.getElementById('timer').innerText = 'WOW';
   document.getElementById('mobile-timer').innerText = 'WOW';
-  document.getElementById('title').innerText = `GOOD JOB!`;
-  document.getElementById('subtitle').innerHTML = `😲 YOU'RE SO GOOD AT HOLDING!<br/>YOU WILL HAVE NO TROUBLE OPENING THE PREFERENCES!`;
+  document.getElementById('title').innerText = `GREAT JOB!`;
+  document.getElementById('subtitle').innerHTML = `😲 YOU'RE SO GOOD AT HOLDING BUTTONS!<br/>YOU WILL HAVE NO TROUBLE OPENING THE PREFERENCES!`;
   document.getElementById('li-1').innerText = `You are just the kind of user we want!`;
   document.getElementById('li-2').innerHTML = `Congratulations, your download is now absolutely <strong>FREE!</strong>`;
   document.getElementById('li-3').innerText = '';

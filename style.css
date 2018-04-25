@@ -27,6 +27,7 @@ body {
 }
 
 .mobile-banner-image {
+  border-radius: 9px;
 }
 
 .mobile-banner-image-container {
@@ -56,12 +57,12 @@ body {
 
 .mobile-banner-image-timer {
   position: absolute;
-  left: 2.8vh;
+  left: 24.5px;
   top: 0;
-  height: 4.55vh;
-  width: 8.7vh;
+  height: 100%;
+  width: 83px;
   overflow: hidden;
-  font-size: 1.8vh;
+  font-size: 18px;
   letter-spacing: 1.1;
   font-family: 'Helvetica Neue', Arial;
   display: flex;
@@ -159,7 +160,12 @@ a {
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 801px) {
+.celebrate a {
+  color: black;
+}
+
+/*@media only screen and (max-width: 801px) { */
+@media only screen and (max-aspect-ratio: 1/1) {
   h1 {
     font-size: 10vw;
   }
@@ -175,13 +181,14 @@ a {
   .mobile-banner-image-container {
     display: flex;
     margin-bottom: 50px;
+    overflow: hidden;
   }
 
   .text-container {
     position: relative;
     top: 0;
-    left: 10%;
-    width: 80%;
+    left: 5%;
+    width: 90%;
     display: block;
     margin-top: 20%;
   }
@@ -192,10 +199,13 @@ a {
 
   .mobile-footer-container {
     display: block;
-    position: absolute;
-    left: 10%;
-    width: 80%;
-    bottom: 10%;
-    color: #888;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
   }
 }
