@@ -52,8 +52,10 @@ function toggle() {
   active = !active;
   if (active) {
     document.getElementById('timer').style.backgroundColor = 'rgb(42, 160, 28)';
+    document.getElementById('mobile-timer').style.backgroundColor = 'rgb(42, 160, 28)';
   } else {
     document.getElementById('timer').style.backgroundColor = '#363636';
+    document.getElementById('mobile-timer').style.backgroundColor = '#363636';
   }
 }
 
@@ -61,7 +63,9 @@ function reset() {
   seconds = 1;
   active = false;
   document.getElementById('timer').innerText = `0:00`;
+  document.getElementById('mobile-timer').innerText = `0:00`;
   document.getElementById('timer').style.backgroundColor = '#363636';
+  document.getElementById('mobile-timer').style.backgroundColor = '#363636';
 }
 
 setInterval(() => {
@@ -69,6 +73,7 @@ setInterval(() => {
     let m = Math.floor(seconds / 60);
     let s = seconds % 60;
     document.getElementById('timer').innerText = `${pad(m, 1)}:${pad(s, 2)}`;
+    document.getElementById('mobile-timer').innerText = `${pad(m, 1)}:${pad(s, 2)}`;
 
     seconds += 1;
   }
@@ -80,7 +85,9 @@ function celebrate() {
 
   active = false;
   document.getElementById('timer').style.backgroundColor = 'red';
+  document.getElementById('mobile-timer').style.backgroundColor = 'red';
   document.getElementById('timer').innerText = 'WOW';
+  document.getElementById('mobile-timer').innerText = 'WOW';
   document.getElementById('title').innerText = `GOOD JOB!`;
   document.getElementById('subtitle').innerHTML = `😲 YOU'RE SO GOOD AT HOLDING!<br/>YOU WILL HAVE NO TROUBLE OPENING THE PREFERENCES!`;
   document.getElementById('li-1').innerText = `You are just the kind of user we want!`;

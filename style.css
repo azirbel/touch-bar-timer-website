@@ -26,15 +26,42 @@ body {
   justify-content: flex-end;
 }
 
+.mobile-banner-image {
+}
+
+.mobile-banner-image-container {
+  position: relative;
+  display: none;
+}
+
 .banner-image-timer {
   position: absolute;
-  background-color: white;
   right: 52.5vh;
   top: 43.95vh;
   height: 2.8vh;
   width: 5.15vh;
   overflow: hidden;
   font-size: 1.2vh;
+  letter-spacing: 1.1;
+  font-family: 'Helvetica Neue', Arial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10%;
+  background-color: rgb(42, 160, 28);
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mobile-banner-image-timer {
+  position: absolute;
+  left: 2.8vh;
+  top: 0;
+  height: 4.55vh;
+  width: 8.7vh;
+  overflow: hidden;
+  font-size: 1.8vh;
   letter-spacing: 1.1;
   font-family: 'Helvetica Neue', Arial;
   display: flex;
@@ -62,7 +89,7 @@ h1 {
   font-weight: 300;
   font-size: 6vw;
   color: white;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .celebrate h1 {
@@ -71,9 +98,15 @@ h1 {
   font-size: 8vw;
 }
 
+#subtitle {
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 li {
@@ -101,7 +134,6 @@ button {
   border-radius: 4px;
   padding: 18px 30px;
   font-size: 24px;
-  margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,7 +150,52 @@ button {
   color: #888;
 }
 
+.mobile-footer-container {
+  display: none;
+}
+
 a {
   color: #9fa3a6;
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 801px) {
+  h1 {
+    font-size: 10vw;
+  }
+
+  .celebrate h1 {
+    font-size: 10vw;
+  }
+
+  .banner-image-container {
+    display: none;
+  }
+
+  .mobile-banner-image-container {
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  .text-container {
+    position: relative;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    display: block;
+    margin-top: 20%;
+  }
+
+  .footer-container {
+    display: none;
+  }
+
+  .mobile-footer-container {
+    display: block;
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    bottom: 10%;
+    color: #888;
+  }
 }

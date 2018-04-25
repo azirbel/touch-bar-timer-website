@@ -1,6 +1,8 @@
 <DOCTYPE html>
 <html>
   <head>
+    <title>Touch Bar Timer</title>
+
     <!-- From http://www.favicomatic.com/ -->
     <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
@@ -24,6 +26,17 @@
     </div>
     <div class='text-container'>
       <h1 id='title'>Touch Bar Timer</h1>
+      <div class='mobile-banner-image-container'>
+        <img class='mobile-banner-image' src='./bar-only.png' />
+        <div id='mobile-timer'
+          onmousedown='mdown()'
+          onmouseup='mup()'
+          oncontextmenu='cmenu()'
+          class='mobile-banner-image-timer'
+        >
+          0:00
+        </div>
+      </div>
       <p id='subtitle'>A little stopwatch for your Mac's touch bar.</p>
       <ul>
         <li id='li-1'>
@@ -33,7 +46,7 @@
           <strong>Hold</strong> to reset.
         </li>
         <li id='li-3'>
-          <strong>Long hold</strong> to customize.
+          <strong>Long hold</strong> to open the preferences.
         </li>
       </ul>
       <div>
@@ -45,6 +58,16 @@
         v1.0.0
         · by <a target="_blank" href="https://twitter.com/alexzirbel">Alex Zirbel</a>
         · code on <a target="_blank" href="https://github.com/azirbel/touch-bar-timer">GitHub</a>
+        · with thanks to <a target="_blank" href="https://github.com/pixel-point/mute-me">Pixel Point</a>
+      </p>
+    </div>
+    <div class='mobile-footer-container'>
+      <p>
+        v1.0.0
+        · by <a target="_blank" href="https://twitter.com/alexzirbel">Alex Zirbel</a>
+      </p>
+      <p>
+        Code on <a target="_blank" href="https://github.com/azirbel/touch-bar-timer">GitHub</a>
         · with thanks to <a target="_blank" href="https://github.com/pixel-point/mute-me">Pixel Point</a>
       </p>
     </div>
