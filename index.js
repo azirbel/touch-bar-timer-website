@@ -86,10 +86,19 @@ function reset() {
 
 setInterval(() => {
   if (active) {
-    let m = Math.floor(seconds / 60);
+    let h = Math.floor(seconds / 3600);
+    let m = Math.floor(seconds / 60) % 60;
     let s = seconds % 60;
-    document.getElementById('timer').innerText = `${pad(m, 1)}:${pad(s, 2)}`;
-    document.getElementById('mobile-timer').innerText = `${pad(m, 1)}:${pad(s, 2)}`;
+
+    let timeStr;
+    if (h > 0) {
+      timeStr = `${pad(h, 1)}h:${pad(m, 2)}`;
+    } else {
+      timeStr = `${pad(m, 1)}:${pad(s, 2)}`;
+    }
+
+    document.getElementById('timer').innerText = timeStr;
+    document.getElementById('mobile-timer').innerText = timeStr;
 
     seconds += 1;
   }
