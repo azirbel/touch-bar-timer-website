@@ -133,7 +133,9 @@ strong {
   width: 50px;
 }
 
-button {
+.button {
+  display: inline-block;
+  text-decoration: none;
   background-color: rgb(42, 160, 28);
   border: none;
   outline: none;
@@ -141,13 +143,19 @@ button {
   border-radius: 4px;
   padding: 18px 30px;
   font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.celebrate button {
+.button:hover {
+  background-color: rgb(50, 193, 33);
+}
+
+.celebrate .button {
+  color: white;
   background-color: red;
+}
+
+.celebrate .button:hover {
+  background-color: #ff3c3c;
 }
 
 .footer-container {
