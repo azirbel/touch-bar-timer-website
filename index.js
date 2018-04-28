@@ -14,16 +14,18 @@ function pad(num, size) {
     return s;
 }
 
-const SHORT_HOLD_MS = 300;
-const LONG_HOLD_MS = 2000;
+const DOUBLE_TAP_MS = 300;
+const LONG_HOLD_MS = 650;
 
 let active = true;
 let celebrating = false;
 let seconds = 1;
 let lastMousedown = null;
+let lastMouseup = null;
 
 window.mdown = _.debounce((event) => {
   if (celebrating) {
+    location.reload();
     return;
   }
 
@@ -46,12 +48,14 @@ window.mup = _.debounce(() => {
   let now = new Date();
   let durationMs = now - lastMousedown;
 
-  if (durationMs < SHORT_HOLD_MS) {
-    toggle();
-  } else if (durationMs < LONG_HOLD_MS) {
+  console.log(now, lastMouseup, now - lastMouseup);
+  if (lastMouseup && (now - lastMouseup < DOUBLE_TAP_MS)) {
     reset();
+  } else if (durationMs < LONG_HOLD_MS) {
+    toggle();
   }
 
+  lastMouseup = now;
   lastMousedown = null;
 }, 100);
 
