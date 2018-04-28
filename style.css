@@ -20,7 +20,7 @@ body {
   position: absolute;
   right: 50%;
   top: -10%;
-  height: 130%;
+  height: 130vh;
   width: 10000px;
   display: flex;
   justify-content: flex-end;
